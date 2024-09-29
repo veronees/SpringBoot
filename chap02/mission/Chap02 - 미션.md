@@ -30,7 +30,7 @@ insert into image (reviewId, url) values(1, ‘https://bucket.s3.ap-northeast2.a
 홈 화면 쿼리
 (현재 선택 된 지역에서 도전이 가능한 미션 목록, 페이징 포함)
 
-select r.name, r.type, m.rewardPoint, m.minOrderPrice, m.deadLine from mission m join restaurant r on m.restaurant.id = [r.id](http://r.id) join region rg on r.regionId = rg.id where m.memberId is null and m.isChallenged = ’PENDING’ and rg.depth3 = ‘안암동’ limit 10 offset 0;
+select r.name, r.type, m.rewardPoint, m.minOrderPrice, m.deadLine from mission m join restaurant r on m.restaurant.id = r.id join region rg on r.regionId = rg.id where m.memberId is null and m.isChallenged = ’PENDING’ and rg.depth3 = ‘안암동’ limit 10 offset 0;
 
 ---
 

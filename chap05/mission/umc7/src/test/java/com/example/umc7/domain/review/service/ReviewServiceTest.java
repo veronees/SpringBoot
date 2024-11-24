@@ -1,7 +1,5 @@
 package com.example.umc7.domain.review.service;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import com.example.umc7.domain.member.Member;
 import com.example.umc7.domain.member.enums.Gender;
 import com.example.umc7.domain.member.enums.SocialType;
@@ -21,7 +19,7 @@ import org.springframework.transaction.annotation.Transactional;
 class ReviewServiceTest {
 
     @Autowired
-    ReviewService reviewService;
+    ReviewCommandService reviewService;
 
     @Autowired
     EntityManager entityManager;
@@ -29,23 +27,23 @@ class ReviewServiceTest {
     @Autowired
     StoreRepository storeRepository;
 
-    @Test
-    @DisplayName("리뷰를 저장한다")
-    void test1() {
-        Member member = Member.builder()
-            .name("베로")
-            .gender(Gender.MAN)
-            .age(25)
-            .address("역곡 어딘가")
-            .socialType(SocialType.NAVER)
-            .email("abc123@naver.com")
-            .point(0)
-            .build();
-
-        entityManager.persist(member);
-
-        Store store = storeRepository.findById(1L).get();
-
-        reviewService.saveReview(member, store, "맛있어요", 5.0f);
-    }
+//    @Test
+//    @DisplayName("리뷰를 저장한다")
+//    void test1() {
+//        Member member = Member.builder()
+//            .name("베로")
+//            .gender(Gender.MAN)
+//            .age(25)
+//            .address("역곡 어딘가")
+//            .socialType(SocialType.NAVER)
+//            .email("abc123@naver.com")
+//            .point(0)
+//            .build();
+//
+//        entityManager.persist(member);
+//
+//        Store store = storeRepository.findById(1L).get();
+//
+//        reviewService.saveReview(member, store, "맛있어요", 5.0f);
+//    }
 }

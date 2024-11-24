@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 @RequiredArgsConstructor
 @Transactional(readOnly = true)
-public class StoreService {
+public class StoreQueryService {
 
     private final StoreRepository storeRepository;
 

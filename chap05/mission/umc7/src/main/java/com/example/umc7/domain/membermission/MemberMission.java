@@ -33,4 +33,8 @@ public class MemberMission extends BaseTime {
     private Mission mission;
 
     private boolean clearStatus;
+
+    public void updateClearStatus() {
+        this.clearStatus = true;
+    }
 }

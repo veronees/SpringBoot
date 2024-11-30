@@ -38,6 +38,11 @@ public enum ErrorStatus implements BaseErrorCode {
     // MemberMission 관련
     MEMBERMISSION_ALREADY_CHALLENGING(HttpStatus.BAD_REQUEST, "MEMBERMISSION4001",
         "이미 도전 중인 미션입니다."),
+    MEMBERMISSION_NOT_FOUND(HttpStatus.BAD_REQUEST, "MEMBERMISSION4002", "해당 미션을 찾을 수 없습니다."),
+
+    // Page validator
+    PAGE_NUM_NOT_VALID(HttpStatus.BAD_REQUEST, "PAGENUM4001", "page가 0이하일 수 없습니다."),
+
 
     ;
 

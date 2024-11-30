@@ -37,4 +37,12 @@ public class MemberMissionCommandService {
 
         memberMissionRepository.save(memberMission);
     }
+
+    public void modifyClearStatus(Long memberMissionId) {
+        MemberMission memberMission = memberMissionRepository.findById(memberMissionId).orElseThrow(
+            () -> new GeneralException(ErrorStatus.MEMBERMISSION_NOT_FOUND)
+        );
+
+        memberMission.updateClearStatus();
+    }
 }

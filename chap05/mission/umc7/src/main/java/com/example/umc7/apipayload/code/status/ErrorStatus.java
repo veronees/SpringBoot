@@ -22,6 +22,8 @@ public enum ErrorStatus implements BaseErrorCode {
     // Member Error
     MEMBER_NOT_FOUND(HttpStatus.BAD_REQUEST, "MEMBER4001", "사용자가 없습니다."),
     NICKNAME_NOT_EXIST(HttpStatus.BAD_REQUEST, "MEMBER4002", "닉네임은 필수 입니다."),
+    MEMBER_ALREADY_LOGOUT(HttpStatus.BAD_REQUEST, "MEMBER4003", "이미 로그아웃한 사용자입니다."),
+
 
     // Article Error
     ARTICLE_NOT_FOUND(HttpStatus.NOT_FOUND, "ARTICLE4001", "게시글이 없습니다."),
@@ -43,6 +45,10 @@ public enum ErrorStatus implements BaseErrorCode {
     // Page validator
     PAGE_NUM_NOT_VALID(HttpStatus.BAD_REQUEST, "PAGENUM4001", "page가 0이하일 수 없습니다."),
 
+
+    TOKEN_MISMATCH(HttpStatus.BAD_REQUEST, "TOKEN4001", "토큰 종류가 올바르지 않습니다."),
+
+    MEMBER_TOKEN_NOT_FOUND(HttpStatus.BAD_REQUEST, "TOKEN4002", "사용자의 토큰을 찾을 수 없습니다."),
 
     ;
 

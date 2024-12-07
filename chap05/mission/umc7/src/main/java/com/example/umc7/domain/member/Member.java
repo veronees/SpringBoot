@@ -1,6 +1,7 @@
 package com.example.umc7.domain.member;
 
 import com.example.umc7.domain.member.enums.Gender;
+import com.example.umc7.domain.member.enums.Role;
 import com.example.umc7.domain.member.enums.SocialType;
 import com.example.umc7.global.BaseTime;
 import jakarta.persistence.Entity;
@@ -41,4 +42,17 @@ public class Member extends BaseTime {
     private String email;
 
     private Integer point;
+
+    // 카카오에서 제공해주는 유저 id + :KAKAO
+    private String clientId;
+
+    private String kakaoProfileNickname;
+
+    @Enumerated(EnumType.STRING)
+    private Role role;
+
+    public void updateKakaoProfileNickname(String name) {
+        this.kakaoProfileNickname = name;
+    }
+
 }
